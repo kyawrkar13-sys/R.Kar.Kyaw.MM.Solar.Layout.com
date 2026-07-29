@@ -114,11 +114,10 @@ Calculate
 <div class="result" id="output">
 Result will show here
 </div>
+  
 
 
 </div>
-
-
 
 <script>
 
@@ -168,7 +167,16 @@ let dc = qty * watt / 1000;
 let inverter = dc / 1.2;
 
 
+localStorage.setItem(
+"pvData",
+JSON.stringify({
 
+panelQty: qty,
+dcKW: dc,
+inverter: Math.ceil(inverter)
+
+})
+);
 document.getElementById("output").innerHTML =
 
 `
